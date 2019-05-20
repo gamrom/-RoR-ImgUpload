@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Imgposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @imgposts.each do |imgpost| %>
+      <tr>
+        <td><%= imgpost.title %></td>
+        <td><%= imgpost.content %></td>
+        <td><%= image_tag("#{imgpost.image}") %></td>
+        <td><%= link_to 'Show', imgpost %></td>
+        <td><%= link_to 'Edit', edit_imgpost_path(imgpost) %></td>
+        <td><%= link_to 'Destroy', imgpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Imgpost', new_imgpost_path %>

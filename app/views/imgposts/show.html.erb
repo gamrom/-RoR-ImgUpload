@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @imgpost.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @imgpost.content %>
+</p>
+
+<p>
+    <strong>사진:</strong>
+    <%= image_tag("#{@imgpost.image}", class: "show_img") %>
+</p>
+
+<%= link_to 'Edit', edit_imgpost_path(@imgpost) %> |
+<%= link_to 'Back', imgposts_path %>
+
+<style>
+  .show_img {
+    transform: rotate(180deg);
+    height: 300px;
+  }
+</style>
